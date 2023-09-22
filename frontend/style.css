@@ -41,3 +41,9 @@ p {
 #resultado {
     color: #007bff;
 }
+select {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

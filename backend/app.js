@@ -13,9 +13,20 @@ app.get('/', (req, res) => {
 });
 
 // Rota para a soma de dois números
-app.post('/soma', (req, res) => {
-  const { num1, num2 } = req.body;
-  const resultado = num1 + num2;
+app.post('/calcular', (req, res) => {
+  const { num1, num2, operacao } = req.body;
+  let resultado;
+  if (operacao === 'soma') {
+    resultado = num1 + num2;
+  } else if (operacao === 'subtracao') {
+    resultado = num1 - num2;
+  }
+  else if (operacao === 'divisao') {
+    resultado = num1 / num2;
+  }
+  else if (operacao === 'multiplicacao') {
+    resultado = num1 * num2;
+  }
   res.json({ resultado });
 });
 
